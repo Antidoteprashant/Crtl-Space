@@ -1,53 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE RED TASK - Launch Your Dreams</title>
-     <link rel="stylesheet" href="style.css">
-
-  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THE RED TASK - Projects</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">THE RED TASK</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="abouts.html">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-    <nav>
-        <div class="logo">THE RED TASK</div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-    </div>
+  <!-- Background Elements -->
+  <div class="stars" id="stars"></div>
 
-  <section class="team-section">
-    <h2>Our Team</h2>
-    <div class="team-members">
-  
-      <div class="member">
-        <h3>OM Ashish</h3>
-        <p>Research & Strategy Lead</p>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+
+  <div class="planet planet1"></div>
+  <div class="planet planet2"></div>
+  <div class="planet planet3"></div>
+
+  <!-- Projects Section -->
+  <section class="projects-section">
+    <h2>Our Projects</h2>
+    <div class="projects-grid">
+      <!-- Project 1 -->
+      <div class="project-card">
+        <h3>Project Alpha</h3>
+        <p class="project-description">
+          A next-generation propulsion system designed for deep space exploration.
+          Project Alpha leverages advanced ion thrusters to achieve record-breaking speeds.
+        </p>
+        <a href="#" class="project-link">Learn More &rarr;</a>
       </div>
-      <div class="member">
-        <h3>Prashant Kushwah</h3>
-        <p>Leader, Developer</p>
+
+      <!-- Project 2 -->
+      <div class="project-card">
+        <h3>Orbital Shield</h3>
+        <p class="project-description">
+          An automated defense network for orbital assets.
+          Protecting satellites from space debris with high-precision laser tracking.
+        </p>
+        <a href="#" class="project-link">Learn More &rarr;</a>
       </div>
-      <div class="member">
-        <h3>Anish Mohanty</h3>
-        <p>Problem solver</p>
+
+      <!-- Project 3 -->
+      <div class="project-card">
+        <h3>Quantum Link</h3>
+        <p class="project-description">
+          Secure, instantaneous communication across vast distances.
+          Utilizing quantum entanglement for unhackable data transmission.
+        </p>
+        <a href="#" class="project-link">Learn More &rarr;</a>
       </div>
-      <div class="member">
-        <h3>Aastha Musale</h3>
-        <p>Designer</p>
-      </div>
-      <div class="member">
-        <h3>Dishi Mukati</h3>
-        <p>Member</p>
+
+      <!-- Project 4 -->
+      <div class="project-card">
+        <h3>Terraform X</h3>
+        <p class="project-description">
+          Sustainable habitat solutions for harsh environments.
+          Pioneering closed-loop life support systems for future colonies.
+        </p>
+        <a href="#" class="project-link">Learn More &rarr;</a>
       </div>
     </div>
   </section>
-   </div> 
-</body>
-</html>
 
-  
+  <!-- Clouds -->
+  <div class="clouds"></div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Generate random stars
+      function createStars() {
+        const starsContainer = document.getElementById('stars');
+        if (!starsContainer) return;
+        const numberOfStars = 150;
+
+        for (let i = 0; i < numberOfStars; i++) {
+          const star = document.createElement('div');
+          star.className = 'star';
+          star.style.left = `${Math.random() * 100}%`;
+          star.style.top = `${Math.random() * 100}%`;
+          star.style.animationDelay = `${Math.random() * 3}s`;
+          star.style.animationDuration = `${Math.random() * 3 + 2}s`;
+
+          if (Math.random() > 0.8) {
+            star.style.background = '#9945ff';
+            star.style.boxShadow = '0 0 4px rgba(153, 69, 255, 0.5)';
+          }
+
+          starsContainer.appendChild(star);
+        }
+      }
+
+      document.addEventListener('mousemove', (e) => {
+        const planets = document.querySelectorAll('.planet');
+
+        const mouseX = e.clientX / window.innerWidth;
+        const mouseY = e.clientY / window.innerHeight;
+
+        planets.forEach((planet, index) => {
+          const speed = (index + 1) * 2;
+          const x = (mouseX - 0.5) * speed * 2;
+          const y = (mouseY - 0.5) * speed * 2;
+          planet.style.transform = `translate(${x}px, ${y}px)`;
+        });
+      });
+
+      // Note: Floating particles code removed as there is no main-sphere in this page
+      // If main-sphere is added, restore the code from index.html
+
+      createStars();
+    });
+  </script>
+</body>
+
+</html>
