@@ -1,0 +1,290 @@
+diff --git a/.DS_Store b/.DS_Store
+index 4cd2c38..f46f697 100644
+Binary files a/.DS_Store and b/.DS_Store differ
+diff --git a/index.html b/index.html
+index a183551..923c767 100644
+--- a/index.html
++++ b/index.html
+@@ -519,6 +519,171 @@
+                 display: none;
+             }
+         }
++
++        /* New Sections CSS */
++        section.features,
++        section.about {
++            padding: 100px 50px;
++            position: relative;
++            z-index: 10;
++            background: rgba(10, 10, 15, 0.9);
++            backdrop-filter: blur(10px);
++        }
++
++        .section-title {
++            text-align: center;
++            font-size: 2.5em;
++            margin-bottom: 50px;
++            background: linear-gradient(135deg, #9945ff, #fff);
++            -webkit-background-clip: text;
++            background-clip: text;
++            -webkit-text-fill-color: transparent;
++        }
++
++        .features-grid {
++            display: grid;
++            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
++            gap: 40px;
++            max-width: 1200px;
++            margin: 0 auto;
++        }
++
++        .feature-card {
++            background: rgba(255, 255, 255, 0.05);
++            border: 1px solid rgba(153, 69, 255, 0.2);
++            border-radius: 20px;
++            padding: 40px 30px;
++            text-align: center;
++            transition: all 0.4s ease;
++        }
++
++        .feature-card:hover {
++            transform: translateY(-10px);
++            border-color: rgba(153, 69, 255, 0.6);
++            box-shadow: 0 15px 30px rgba(153, 69, 255, 0.2);
++            background: rgba(255, 255, 255, 0.08);
++        }
++
++        .feature-icon {
++            font-size: 3em;
++            margin-bottom: 20px;
++        }
++
++        .feature-card h3 {
++            font-size: 1.5em;
++            margin-bottom: 15px;
++            color: #fff;
++        }
++
++        .feature-card p {
++            color: #b0b0b0;
++            line-height: 1.6;
++        }
++
++        .about {
++            display: flex;
++            align-items: center;
++            justify-content: space-between;
++            max-width: 1200px;
++            margin: 0 auto;
++            gap: 60px;
++            background: transparent;
++        }
++
++        .about-content {
++            flex: 1;
++        }
++
++        .about-content .section-title {
++            text-align: left;
++        }
++
++        .about-content p {
++            color: #b0b0b0;
++            font-size: 1.1em;
++            line-height: 1.8;
++            margin-bottom: 30px;
++        }
++
++        .outline-button {
++            display: inline-block;
++            padding: 12px 30px;
++            color: #9945ff;
++            text-decoration: none;
++            border: 2px solid #9945ff;
++            border-radius: 50px;
++            font-weight: bold;
++            transition: all 0.3s;
++        }
++
++        .outline-button:hover {
++            background: #9945ff;
++            color: #fff;
++            box-shadow: 0 0 20px rgba(153, 69, 255, 0.4);
++        }
++
++        .about-visual {
++            flex: 1;
++            display: flex;
++            justify-content: center;
++            align-items: center;
++        }
++
++        .glow-box {
++            width: 300px;
++            height: 300px;
++            background: linear-gradient(135deg, rgba(153, 69, 255, 0.2), rgba(94, 42, 179, 0.1));
++            border: 1px solid rgba(153, 69, 255, 0.5);
++            border-radius: 30px;
++            box-shadow: 0 0 50px rgba(153, 69, 255, 0.3);
++            animation: pulse 4s infinite alternate;
++            transform: rotate(45deg);
++        }
++
++        footer {
++            background: #050505;
++            padding: 40px 50px;
++            text-align: center;
++            border-top: 1px solid rgba(153, 69, 255, 0.2);
++            z-index: 10;
++            position: relative;
++        }
++
++        .footer-logo {
++            font-size: 1.5em;
++            font-weight: bold;
++            color: #555;
++            margin-bottom: 10px;
++            letter-spacing: 2px;
++        }
++
++        footer p {
++            color: #777;
++            font-size: 0.9em;
++        }
++
++        @media (max-width: 768px) {
++
++            section.features,
++            section.about {
++                padding: 60px 20px;
++            }
++
++            .about {
++                flex-direction: column;
++                text-align: center;
++            }
++
++            .about-content .section-title {
++                text-align: center;
++            }
++
++            .glow-box {
++                width: 200px;
++                height: 200px;
++                margin-top: 40px;
++            }
++        }
+     </style>
+ </head>
+ 
+@@ -574,6 +739,50 @@
+     <!-- Clouds -->
+     <div class="clouds"></div>
+ 
++    <!-- Added Features Section -->
++    <section class="features" id="features">
++        <h2 class="section-title">Why Choose D3F4ULT?</h2>
++        <div class="features-grid">
++            <div class="feature-card">
++                <div class="feature-icon">🚀</div>
++                <h3>Blazing Fast</h3>
++                <p>Experience unmatched speed and optimization that keeps you ahead of the curve.</p>
++            </div>
++            <div class="feature-card">
++                <div class="feature-icon">🔒</div>
++                <h3>Secure Core</h3>
++                <p>Enterprise-grade security woven directly into the fabric of your application.</p>
++            </div>
++            <div class="feature-card">
++                <div class="feature-icon">✨</div>
++                <h3>Stunning Design</h3>
++                <p>Beautiful, responsive aesthetics that captivate and engage users effortlessly.</p>
++            </div>
++        </div>
++    </section>
++
++    <!-- Expanded About Section -->
++    <section class="about" id="about">
++        <div class="about-content">
++            <h2 class="section-title">Beyond Boundaries</h2>
++            <p>Our mission is to push the envelope of what's possible on the web. At D3F4ULT, we combine bleeding-edge
++                technology with thoughtful design. We don't just build websites; we craft digital experiences that leave
++                lasting impressions.</p>
++            <a href="abouts.html" class="outline-button">Read Full Story</a>
++        </div>
++        <div class="about-visual">
++            <div class="glow-box"></div>
++        </div>
++    </section>
++
++    <!-- Footer -->
++    <footer>
++        <div class="footer-content">
++            <div class="footer-logo">D3F4ULT</div>
++            <p>&copy; 2026 D3F4ULT. All rights reserved.</p>
++        </div>
++    </footer>
++
+     <script>
+         document.addEventListener('DOMContentLoaded', () => {
+             // Generate random stars
+diff --git a/start.html b/start.html
+index 48f4f3b..939cbc8 100644
+--- a/start.html
++++ b/start.html
+@@ -896,6 +896,55 @@
+         .nav-links a:hover::after {
+             width: 100%;
+         }
++
++        /* Responsive Media Queries */
++        @media (max-width: 992px) {
++            .dashboard-container {
++                grid-template-columns: 1fr;
++            }
++
++            .sidebar {
++                position: relative;
++                top: 0;
++            }
++        }
++
++        @media (max-width: 768px) {
++            .nav-container {
++                flex-direction: column;
++                gap: 1rem;
++            }
++
++            .nav-menu {
++                flex-wrap: wrap;
++                justify-content: center;
++                gap: 1rem;
++            }
++
++            .solar-system {
++                transform: scale(0.5);
++                transform-origin: center center;
++            }
++
++            .dashboard-container {
++                margin: 8rem auto 2rem;
++                padding: 1rem;
++            }
++
++            .canvas-container {
++                height: 300px;
++                overflow: hidden;
++            }
++
++            .control-panel {
++                grid-template-columns: 1fr;
++            }
++
++            .modal-content {
++                width: 95%;
++                padding: 1.5rem;
++            }
++        }
+     </style>
+ </head>
+ 
